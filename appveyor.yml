@@ -1,0 +1,14 @@
+environment:
+  matrix:
+    - PY: "c:\\python34-x64"
+    - PY: "c:\\python35-x64"
+    - PY: "c:\\python34"
+    - PY: "c:\\python35"
+install:
+  - set PATH=%PY%;%PATH%
+  - python -m pip install -U pip setuptools wheel
+build_script:
+  - python.exe setup.py bdist_wheel
+
+artifacts:
+  - path: 'dist\*.whl'
