@@ -1,0 +1,21 @@
+box:
+  id: quay.io/pypa/manylinux1_x86_64
+  registry: quay.io
+build:
+  steps:
+    - script:
+        name: python envs
+        code: |
+          ls /opt/python
+    - script:
+        name: build
+        code: |
+          /opt/python/cp35-cp35m/bin/python setup.py bdist_wheel
+    - script:
+        name: audit
+        code: |
+          auditwheel repair dist/*.whl -w wheelhouse
+    - script:
+        name: results
+        code: |
+          ls wheelhouse
