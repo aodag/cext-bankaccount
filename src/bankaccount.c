@@ -72,7 +72,7 @@ static struct PyModuleDef bankaccountmodule = {
 };
 
 PyMODINIT_FUNC
-PyInit_bankaccount(void)
+PyInit__bankaccount(void)
 {
   PyObject *m = PyModule_Create(&bankaccountmodule);
   bankaccount_BankAccountType.tp_new = PyType_GenericNew;
