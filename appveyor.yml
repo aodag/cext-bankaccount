@@ -19,7 +19,7 @@ artifacts:
 
 deploy:
   provider: GitHub
-  artifact: 'dist\*.whl'
+  artifact: '*.whl'
   auth_token: $(GITHUB_TOKEN)
   on:
     branch: master
