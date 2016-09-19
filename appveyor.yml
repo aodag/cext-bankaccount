@@ -16,10 +16,11 @@ after_test:
 
 artifacts:
   - path: 'dist\*.whl'
+    name: wheel
 
 deploy:
   provider: GitHub
-  artifact: '*.whl'
+  artifact: wheel
   auth_token: $(GITHUB_TOKEN)
   on:
     branch: master
