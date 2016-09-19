@@ -16,3 +16,11 @@ after_test:
 
 artifacts:
   - path: 'dist\*.whl'
+
+deploy:
+  provider: GitHub
+  artifact: 'dist\*.whl'
+  auth_token: $(GITHUB_TOKEN)
+  on:
+    branch: master
+    appveyor_repo_tag: true
