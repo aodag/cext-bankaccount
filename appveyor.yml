@@ -8,6 +8,10 @@ install:
   - set PATH=%PY%;%PATH%
   - python -m pip install -U pip setuptools wheel
 build_script:
+  - python.exe setup.py build
+test_script:
+  - python.exe setup.py test
+after_test:
   - python.exe setup.py bdist_wheel
 
 artifacts:

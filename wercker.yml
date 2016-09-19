@@ -10,6 +10,14 @@ build:
     - script:
         name: build
         code: |
+          /opt/python/cp35-cp35m/bin/python setup.py build
+    - script:
+        name: test
+        code: |
+          /opt/python/cp35-cp35m/bin/python setup.py test
+    - script:
+        name: pack
+        code: |
           /opt/python/cp35-cp35m/bin/python setup.py bdist_wheel
     - script:
         name: audit
