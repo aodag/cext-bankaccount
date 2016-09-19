@@ -20,4 +20,5 @@ setup(
     version=__version__,
     packages=find_packages(exclude=['tests']),
     ext_modules=[Extension('_bankaccount', ['src/bankaccount.c'])],
+    test_suite="tests",
 )
